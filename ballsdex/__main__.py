@@ -27,7 +27,7 @@ discord.voice_client.VoiceClient.warn_nacl = False  # disable PyNACL warning
 log = logging.getLogger("ballsdex")
 
 TORTOISE_ORM = {
-    "connections": {"default": os.environ.get("BALLSDEXBOT_DB_URL")},
+    "connections": {"default": os.environ.get("BALLSDEXBOT_DB_URL", "sqlite://ballsdex.db")},
     "apps": {
         "models": {
             "models": ["ballsdex.core.models"],
